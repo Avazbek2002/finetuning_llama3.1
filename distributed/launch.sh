@@ -15,7 +15,8 @@ echo ${job_id}
 echo ${master_addr}
 echo ${master_port}
 
-torchrun --nproc_per_node=1 --nnodes=${job_n} --rdzv_endpoint=${master_addr}:${master_port} --rdzv_backend=c10d distributed.py
+torchrun --nproc_per_node=1 --nnodes=${job_n} --rdzv_endpoint=${master_addr}:${master_port} --rdzv_backend=c10d finetuning_llama3.1.git
+/distributed/distributed.py
 
 # List files after running the training script
 echo "Files after training:"
